@@ -1,0 +1,11 @@
+make --dry-run --always-make --keep-going --print-directory
+make: Entering directory '/home/ryancey/Projects/neural_net'
+g++ -c -I./header source/network.cpp
+mv *.o bin
+g++ -c -I./header source/neuron.cpp
+mv *.o bin
+g++ -c -I./header source/main.cpp
+mv *.o bin
+g++ -o run bin/network.o bin/neuron.o bin/main.o
+make: Leaving directory '/home/ryancey/Projects/neural_net'
+ 

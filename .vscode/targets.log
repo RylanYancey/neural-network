@@ -1,0 +1,369 @@
+make all --print-data-base --no-builtin-variables --no-builtin-rules --question
+# GNU Make 4.1
+# Built for x86_64-pc-linux-gnu
+# Copyright (C) 1988-2014 Free Software Foundation, Inc.
+# License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+# This is free software: you are free to change and redistribute it.
+# There is NO WARRANTY, to the extent permitted by law.
+
+# Make data base, printed on Wed Jun 15 12:31:16 2022
+
+# Variables
+
+# automatic
+<D = $(patsubst %/,%,$(dir $<))
+# automatic
+?F = $(notdir $?)
+# environment
+DESKTOP_SESSION = plasma
+# environment
+KONSOLE_DBUS_WINDOW = /Windows/1
+# default
+.SHELLFLAGS := -c
+# environment
+XDG_SESSION_CLASS = user
+# environment
+XDG_SESSION_TYPE = x11
+# environment
+VSCODE_LOG_NATIVE = false
+# environment
+MODULEPATH = /apps/Modules_new_image/versions:/apps/Modules_new_image/$MODULE_VERSION/modulefiles:/apps/Modules_new_image/modulefiles
+# automatic
+?D = $(patsubst %/,%,$(dir $?))
+# environment
+GTK_RC_FILES = /etc/gtk/gtkrc:/home/ryancey/.gtkrc:/home/ryancey/.config/gtkrc
+# automatic
+@D = $(patsubst %/,%,$(dir $@))
+# environment
+XAUTHORITY = /tmp/xauth-926-_0
+# automatic
+@F = $(notdir $@)
+# default
+MAKE_VERSION := 4.1
+# makefile
+CURDIR := /home/ryancey/Projects/neural_net
+# makefile
+SHELL = /bin/sh
+# environment
+VSCODE_NLS_CONFIG = {"locale":"en-us","availableLanguages":{},"_languagePackSupport":true}
+# environment
+_ = /usr/bin/code
+# environment
+QT_AUTO_SCREEN_SCALE_FACTOR = 0
+# makefile (from 'makefile', line 15)
+CFLAGS = -c -I./header
+# makefile (from 'makefile', line 21)
+objects := bin/network.o bin/neuron.o bin/main.o
+# environment
+XDG_CONFIG_DIRS = /etc/xdg/xdg-plasma:/etc/xdg:/usr/share/kubuntu-default-settings/kf5-settings
+# makefile (from 'makefile', line 1)
+MAKEFILE_LIST :=  makefile
+# 'override' directive
+GNUMAKEFLAGS := 
+# environment
+MANDATORY_PATH = /usr/share/gconf/plasma.mandatory.path
+# environment
+XDG_DATA_DIRS = /usr/share/plasma:/usr/local/share:/usr/share:/var/lib/snapd/desktop
+# environment
+DBUS_SESSION_BUS_ADDRESS = unix:abstract=/tmp/dbus-eQekpqvSix,guid=377990f472dbeed00a0d5a8f62a9d8a7
+# environment
+VSCODE_VERBOSE_LOGGING = true
+# environment
+VSCODE_IPC_HOOK_EXTHOST = /run/user/926/vscode-ipc-4e1cf0da-3d79-43f4-b158-01a9e43e246c.sock
+# environment
+VSCODE_CWD = /home/ryancey/Projects/neural_net
+# environment
+XDG_SESSION_PATH = /org/freedesktop/DisplayManager/Session1
+# default
+MAKE_HOST := x86_64-pc-linux-gnu
+# environment
+PATH = /home/ryancey/.cargo/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+# environment
+GPG_AGENT_INFO = /run/user/926/gnupg/S.gpg-agent:0:1
+# environment
+XCURSOR_THEME = breeze_cursors
+# environment
+SESSION_MANAGER = local/whitwell:@/tmp/.ICE-unix/2473,unix/whitwell:/tmp/.ICE-unix/2473
+# environment
+XDG_RUNTIME_DIR = /run/user/926
+# environment
+WINDOWID = 69206022
+# environment
+KONSOLE_PROFILE_NAME = Default
+# environment
+VSCODE_LOG_STACK = false
+# environment
+ELECTRON_RUN_AS_NODE = 1
+# environment
+GTK2_RC_FILES = /etc/gtk-2.0/gtkrc:/home/ryancey/.gtkrc-2.0:/home/ryancey/.config/gtkrc-2.0
+# environment
+PROFILEHOME = 
+# default
+.FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell archives jobserver output-sync check-symlink load
+# environment
+XDG_SESSION_DESKTOP = KDE
+# environment
+SSH_AUTH_SOCK = /tmp/ssh-MiJOI0aFLyjR/agent.2312
+# automatic
+%F = $(notdir $%)
+# environment
+DISPLAY = :0
+# environment
+VSCODE_PIPE_LOGGING = true
+# environment
+PWD = /home/ryancey/Projects/neural_net
+# environment
+KDE_SESSION_VERSION = 5
+# makefile (from 'makefile', line 18)
+src = $(wildcard source/*.cpp)
+# environment
+XDG_SEAT = seat0
+# environment
+SSH_AGENT_PID = 2392
+# environment
+ORIGINAL_XDG_CURRENT_DESKTOP = KDE
+# environment
+VSCODE_AMD_ENTRYPOINT = vs/workbench/api/node/extensionHostProcess
+# environment
+HOME = /home/ryancey
+# environment
+VSCODE_CLI = 1
+# environment
+VSCODE_CODE_CACHE_PATH = /home/ryancey/.config/Code/CachedData/c3511e6c69bb39013c4a4b7b9566ec1ca73fc4d5
+# environment
+LOGNAME = ryancey
+# environment
+APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = 1
+# environment
+KDE_FULL_SESSION = true
+# environment
+ELECTRON_NO_ATTACH_CONSOLE = 1
+# environment
+VSCODE_HANDLES_UNCAUGHT_ERRORS = true
+# automatic
+^D = $(patsubst %/,%,$(dir $^))
+# environment
+XDG_VTNR = 1
+# environment
+MAKELEVEL := 0
+# environment
+MODULE_VERSION_STACK = 3.2.10
+# environment
+COLORTERM = truecolor
+# environment
+KONSOLE_DBUS_SESSION = /Sessions/1
+# default
+MAKE = $(MAKE_COMMAND)
+# default
+MAKECMDGOALS := all
+# environment
+SHLVL = 1
+# makefile (from 'makefile', line 19)
+src1 = $(src:.cpp=.o)
+# makefile (from 'makefile', line 14)
+CC = g++
+# environment
+XDG_SESSION_ID = 3
+# environment
+USER = ryancey
+# makefile
+.DEFAULT_GOAL := all
+# environment
+XDG_CURRENT_DESKTOP = KDE
+# automatic
+%D = $(patsubst %/,%,$(dir $%))
+# default
+MAKE_COMMAND := make
+# environment
+OLDPWD = /home/ryancey/Projects
+# default
+.VARIABLES := 
+# automatic
+*F = $(notdir $*)
+# environment
+LANGUAGE = 
+# environment
+XDG_SEAT_PATH = /org/freedesktop/DisplayManager/Seat0
+# environment
+VSCODE_IPC_HOOK = /run/user/926/vscode-6d13aa78-1.67.2-main.sock
+# makefile
+MAKEFLAGS = pqrR
+# environment
+MFLAGS = -pqrR
+# automatic
+*D = $(patsubst %/,%,$(dir $*))
+# environment
+LOADEDMODULES = 
+# environment
+SHELL_SESSION_ID = 07d9478ba86046e18803bbe62c440efa
+# automatic
++D = $(patsubst %/,%,$(dir $+))
+# environment
+GDK_BACKEND = x11
+# environment
+MODULESHOME = /usr/local/Modules/3.2.10
+# automatic
++F = $(notdir $+)
+# environment
+QT_ACCESSIBILITY = 1
+# environment
+COLORFGBG = 15;0
+# environment
+DEFAULTS_PATH = /usr/share/gconf/plasma.default.path
+# default
+MAKEFILES := 
+# automatic
+<F = $(notdir $<)
+# environment
+MODULE_VERSION = 3.2.10
+# environment
+LC_ALL = C
+# automatic
+^F = $(notdir $^)
+# default
+SUFFIXES := 
+# environment
+GS_LIB = /home/ryancey/.fonts
+# environment
+CHROME_DESKTOP = code-url-handler.desktop
+# environment
+KONSOLE_DBUS_SERVICE = :1.47
+# default
+.INCLUDE_DIRS = /usr/include /usr/local/include /usr/include
+# default
+.RECIPEPREFIX := 
+# environment
+LANG = C
+# environment
+TERM = xterm-256color
+# environment
+VSCODE_PID = 17426
+# environment
+KDE_SESSION_UID = 926
+# variable set hash-table stats:
+# Load=115/1024=11%, Rehash=0, Collisions=9/148=6%
+
+# Pattern-specific Variable Values
+
+# No pattern-specific variable values.
+
+# Directories
+
+# source (device 54, inode 226644867): 5 files, no impossibilities.
+# . (device 54, inode 226644822): 7 files, no impossibilities.
+
+# 12 files, no impossibilities in 2 directories.
+
+# Implicit Rules
+
+bin/%.o: source/%.cpp
+#  recipe to execute (from 'makefile', line 29):
+	$(CC) $(CFLAGS) $?
+	mv *.o bin
+
+# 1 implicit rules, 0 (0.0%) terminal.
+
+# Files
+
+bin/network.o: source/network.cpp
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'network'
+#  File does not exist.
+#  File has been updated.
+#  Needs to be updated (-q is set).
+# automatic
+# @ := bin/network.o
+# automatic
+# % := 
+# automatic
+# * := network
+# automatic
+# + := source/network.cpp
+# automatic
+# | := 
+# automatic
+# < := source/network.cpp
+# automatic
+# ^ := source/network.cpp
+# automatic
+# ? := source/network.cpp
+ 
+# variable set hash-table stats:
+# Load=8/32=25%, Rehash=0, Collisions=1/14=7%
+#  recipe to execute (from 'makefile', line 29):
+	$(CC) $(CFLAGS) $?
+	mv *.o bin
+
+all: bin/network.o bin/neuron.o bin/main.o
+#  Command line target.
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has been updated.
+#  Needs to be updated (-q is set).
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/5=0%
+#  recipe to execute (from 'makefile', line 25):
+	$(CC) -o run $(objects)
+
+.PHONY: clean
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+bin/neuron.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+makefile:
+#  Implicit rule search has been done.
+#  Last modified 2022-06-15 12:05:20.062163
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+source/network.cpp:
+#  Implicit rule search has been done.
+#  Last modified 2022-06-15 12:26:44.644973
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+.DEFAULT:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+clean:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'makefile', line 35):
+	rm -rf all $(objects)
+
+# Not a target:
+bin/main.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# files hash-table stats:
+# Load=10/1024=1%, Rehash=0, Collisions=0/29=0%
+# VPATH Search Paths
+
+# No 'vpath' search paths.
+
+# No general ('VPATH' variable) search path.
+
+# strcache buffers: 1 (0) / strings = 24 / storage = 226 B / avg = 9 B
+# current buf: size = 8162 B / used = 226 B / count = 24 / avg = 9 B
+
+# strcache performance: lookups = 37 / hit rate = 35%
+# hash-table stats:
+# Load=24/8192=0%, Rehash=0, Collisions=2/37=5%
+# Finished Make data base on Wed Jun 15 12:31:16 2022
+
+ 
