@@ -2,14 +2,14 @@
 #include "network.h"
 
 int main() {
+    
+    Network net(4, 2, 1, 3, 2);
 
-    Network net(3, 3, 3, 3);
+    arma::Mat<double> inputs = arma::randu(4, 2);
 
-    vector<float> inputs {1, 2, 3};
+    arma::Mat<double> outputs = net.run(inputs);
 
-    vector<float> outputs = net.run(inputs);
-
-    for (auto i : outputs)
-        cout << i << endl;
+    for (auto a : outputs)
+        cout << a << endl;
 
 }

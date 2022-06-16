@@ -22,7 +22,7 @@ objects := $(src1:source/%=bin/%)
 
 # Compile object files into binary
 all : $(objects)
-	$(CC) -o run $(objects)
+	$(CC) -o run $(objects) -larmadillo
 
 # Generate object files by compiling .cpp and .h files
 bin/%.o : source/%.cpp

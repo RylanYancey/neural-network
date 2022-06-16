@@ -6,7 +6,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Wed Jun 15 12:31:16 2022
+# Make data base, printed on Thu Jun 16 17:16:33 2022
 
 # Variables
 
@@ -53,7 +53,7 @@ QT_AUTO_SCREEN_SCALE_FACTOR = 0
 # makefile (from 'makefile', line 15)
 CFLAGS = -c -I./header
 # makefile (from 'makefile', line 21)
-objects := bin/network.o bin/neuron.o bin/main.o
+objects := bin/network.o bin/layer.o bin/main.o
 # environment
 XDG_CONFIG_DIRS = /etc/xdg/xdg-plasma:/etc/xdg:/usr/share/kubuntu-default-settings/kf5-settings
 # makefile (from 'makefile', line 1)
@@ -65,11 +65,11 @@ MANDATORY_PATH = /usr/share/gconf/plasma.mandatory.path
 # environment
 XDG_DATA_DIRS = /usr/share/plasma:/usr/local/share:/usr/share:/var/lib/snapd/desktop
 # environment
-DBUS_SESSION_BUS_ADDRESS = unix:abstract=/tmp/dbus-eQekpqvSix,guid=377990f472dbeed00a0d5a8f62a9d8a7
+DBUS_SESSION_BUS_ADDRESS = unix:abstract=/tmp/dbus-CS6CN4aC6j,guid=e4b2d503e709c501ac8d223562ab3bd1
 # environment
 VSCODE_VERBOSE_LOGGING = true
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /run/user/926/vscode-ipc-4e1cf0da-3d79-43f4-b158-01a9e43e246c.sock
+VSCODE_IPC_HOOK_EXTHOST = /run/user/926/vscode-ipc-fee40185-6b1d-4e74-bdb3-20ddcaa413fa.sock
 # environment
 VSCODE_CWD = /home/ryancey/Projects/neural_net
 # environment
@@ -83,7 +83,7 @@ GPG_AGENT_INFO = /run/user/926/gnupg/S.gpg-agent:0:1
 # environment
 XCURSOR_THEME = breeze_cursors
 # environment
-SESSION_MANAGER = local/whitwell:@/tmp/.ICE-unix/2473,unix/whitwell:/tmp/.ICE-unix/2473
+SESSION_MANAGER = local/whitwell:@/tmp/.ICE-unix/2495,unix/whitwell:/tmp/.ICE-unix/2495
 # environment
 XDG_RUNTIME_DIR = /run/user/926
 # environment
@@ -103,7 +103,7 @@ PROFILEHOME =
 # environment
 XDG_SESSION_DESKTOP = KDE
 # environment
-SSH_AUTH_SOCK = /tmp/ssh-MiJOI0aFLyjR/agent.2312
+SSH_AUTH_SOCK = /tmp/ssh-iuiEjB6KQh6l/agent.2334
 # automatic
 %F = $(notdir $%)
 # environment
@@ -119,7 +119,7 @@ src = $(wildcard source/*.cpp)
 # environment
 XDG_SEAT = seat0
 # environment
-SSH_AGENT_PID = 2392
+SSH_AGENT_PID = 2414
 # environment
 ORIGINAL_XDG_CURRENT_DESKTOP = KDE
 # environment
@@ -195,7 +195,7 @@ MFLAGS = -pqrR
 # environment
 LOADEDMODULES = 
 # environment
-SHELL_SESSION_ID = 07d9478ba86046e18803bbe62c440efa
+SHELL_SESSION_ID = 9f3c470f3be742078ffc4a5d664d9883
 # automatic
 +D = $(patsubst %/,%,$(dir $+))
 # environment
@@ -227,7 +227,7 @@ GS_LIB = /home/ryancey/.fonts
 # environment
 CHROME_DESKTOP = code-url-handler.desktop
 # environment
-KONSOLE_DBUS_SERVICE = :1.47
+KONSOLE_DBUS_SERVICE = :1.48
 # default
 .INCLUDE_DIRS = /usr/include /usr/local/include /usr/include
 # default
@@ -237,7 +237,7 @@ LANG = C
 # environment
 TERM = xterm-256color
 # environment
-VSCODE_PID = 17426
+VSCODE_PID = 3504
 # environment
 KDE_SESSION_UID = 926
 # variable set hash-table stats:
@@ -250,9 +250,9 @@ KDE_SESSION_UID = 926
 # Directories
 
 # source (device 54, inode 226644867): 5 files, no impossibilities.
-# . (device 54, inode 226644822): 7 files, no impossibilities.
+# . (device 54, inode 226644822): 10 files, no impossibilities.
 
-# 12 files, no impossibilities in 2 directories.
+# 15 files, no impossibilities in 2 directories.
 
 # Implicit Rules
 
@@ -268,33 +268,14 @@ bin/%.o: source/%.cpp
 bin/network.o: source/network.cpp
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'network'
-#  File does not exist.
+#  Last modified 2022-06-16 17:12:14.30478996
 #  File has been updated.
-#  Needs to be updated (-q is set).
-# automatic
-# @ := bin/network.o
-# automatic
-# % := 
-# automatic
-# * := network
-# automatic
-# + := source/network.cpp
-# automatic
-# | := 
-# automatic
-# < := source/network.cpp
-# automatic
-# ^ := source/network.cpp
-# automatic
-# ? := source/network.cpp
- 
-# variable set hash-table stats:
-# Load=8/32=25%, Rehash=0, Collisions=1/14=7%
+#  Successfully updated.
 #  recipe to execute (from 'makefile', line 29):
 	$(CC) $(CFLAGS) $?
 	mv *.o bin
 
-all: bin/network.o bin/neuron.o bin/main.o
+all: bin/network.o bin/layer.o bin/main.o
 #  Command line target.
 #  Implicit rule search has not been done.
 #  File does not exist.
@@ -303,7 +284,7 @@ all: bin/network.o bin/neuron.o bin/main.o
 # variable set hash-table stats:
 # Load=0/32=0%, Rehash=0, Collisions=0/5=0%
 #  recipe to execute (from 'makefile', line 25):
-	$(CC) -o run $(objects)
+	$(CC) -o run $(objects) -larmadillo
 
 .PHONY: clean
 #  Implicit rule search has not been done.
@@ -311,22 +292,31 @@ all: bin/network.o bin/neuron.o bin/main.o
 #  File has not been updated.
 
 # Not a target:
-bin/neuron.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
+source/main.cpp:
+#  Implicit rule search has been done.
+ 
+#  Last modified 2022-06-16 17:16:14.426033
+#  File has been updated.
+#  Successfully updated.
 
 # Not a target:
 makefile:
 #  Implicit rule search has been done.
-#  Last modified 2022-06-15 12:05:20.062163
+#  Last modified 2022-06-16 15:47:09.876125
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+source/layer.cpp:
+#  Implicit rule search has been done.
+#  Last modified 2022-06-16 17:10:47.555311
 #  File has been updated.
 #  Successfully updated.
 
 # Not a target:
 source/network.cpp:
 #  Implicit rule search has been done.
-#  Last modified 2022-06-15 12:26:44.644973
+#  Last modified 2022-06-16 17:12:11.595312
 #  File has been updated.
 #  Successfully updated.
 
@@ -344,26 +334,58 @@ clean:
 #  recipe to execute (from 'makefile', line 35):
 	rm -rf all $(objects)
 
-# Not a target:
-bin/main.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
+bin/main.o: source/main.cpp
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'main'
+#  Last modified 2022-06-16 17:08:44.310547643
+#  File has been updated.
+#  Needs to be updated (-q is set).
+# automatic
+# @ := bin/main.o
+# automatic
+# % := 
+# automatic
+# * := main
+# automatic
+# + := source/main.cpp
+# automatic
+# | := 
+# automatic
+# < := source/main.cpp
+# automatic
+# ^ := source/main.cpp
+# automatic
+# ? := source/main.cpp
+# variable set hash-table stats:
+# Load=8/32=25%, Rehash=0, Collisions=1/14=7%
+#  recipe to execute (from 'makefile', line 29):
+	$(CC) $(CFLAGS) $?
+	mv *.o bin
+
+bin/layer.o: source/layer.cpp
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'layer'
+#  Last modified 2022-06-16 17:12:15.954161267
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'makefile', line 29):
+	$(CC) $(CFLAGS) $?
+	mv *.o bin
 
 # files hash-table stats:
-# Load=10/1024=1%, Rehash=0, Collisions=0/29=0%
+# Load=12/1024=1%, Rehash=0, Collisions=0/37=0%
 # VPATH Search Paths
 
 # No 'vpath' search paths.
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 24 / storage = 226 B / avg = 9 B
-# current buf: size = 8162 B / used = 226 B / count = 24 / avg = 9 B
+# strcache buffers: 1 (0) / strings = 31 / storage = 281 B / avg = 9 B
+# current buf: size = 8162 B / used = 281 B / count = 31 / avg = 9 B
 
-# strcache performance: lookups = 37 / hit rate = 35%
+# strcache performance: lookups = 46 / hit rate = 32%
 # hash-table stats:
-# Load=24/8192=0%, Rehash=0, Collisions=2/37=5%
-# Finished Make data base on Wed Jun 15 12:31:16 2022
+# Load=31/8192=0%, Rehash=0, Collisions=2/46=4%
+# Finished Make data base on Thu Jun 16 17:16:33 2022
 
  

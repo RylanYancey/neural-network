@@ -1,26 +1,17 @@
 
-#pragma once
-
-#include "neuron.h"
+#include "layer.h"
 
 class Network {
 public:
 
-    Network(int inputs, int layers, int layer_size, int outputs);
-    ~Network();
+    Network(int observations, int input, int layers, int layer_size, int outputs);
 
-    int inputs;
-    int layers;
-    int layer_size;
-    int outputs;
-
-    vector<vector<unique_ptr<Neuron>> *> net;
-
-    vector<float> train(vector<float> & inputs, vector<float> & target);
-    vector<float> run(vector<float> & inputs);
-    void backpropogate(vector<float> & output);
+    arma::Mat<double> train();
+    arma::Mat<double> run(arma::Mat<double> & input_values);
 
 private:
 
+    arma::Mat<double> inputs;
+    vector<Layer> layers;
 
 };
