@@ -1,5 +1,5 @@
 make --dry-run --always-make --keep-going --print-directory
-make: Entering directory '/home/rylanyancey/Projects/art_net'
+make: Entering directory '/home/ryancey/Projects/neural_net'
 g++ -c -I./header source/network.cpp
 mv *.o bin
 g++ -c -I./header source/layer.cpp
@@ -7,5 +7,5 @@ mv *.o bin
 g++ -c -I./header source/main.cpp
 mv *.o bin
 g++ -o run bin/network.o bin/layer.o bin/main.o -larmadillo
-make: Leaving directory '/home/rylanyancey/Projects/art_net'
+make: Leaving directory '/home/ryancey/Projects/neural_net'
  
