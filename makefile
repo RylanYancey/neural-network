@@ -12,7 +12,7 @@
 
 # Compiler Command
 CC = g++
-CFLAGS = -c -I./header
+CFLAGS = -c -I./header -I./source
 
 # collecting object file names
 src = $(wildcard source/*.cpp)

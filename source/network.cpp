@@ -43,7 +43,7 @@ vector<double> Network::train (vector<double> & input, vector<double> & target) 
 
     Matrix in  (input);
     Matrix tar (target);
-
+                                                                                                                                                                                                                                                                                                     
     in  =  in.t();
     tar = tar.t();
 
