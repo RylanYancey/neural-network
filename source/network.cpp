@@ -6,13 +6,17 @@ Network::Network (int inputs, int num_layers, int layer_size, int outputs) {
     this -> inputs  = inputs;
     this -> outputs = outputs;
 
+    // input layer init
     this -> layers.push_back(Layer(layer_size, inputs));
+    // hidden layers init
     for (int i = 1; i < num_layers; i++)
         this -> layers.push_back(Layer(layer_size, layer_size));
+    // output layer init
     this -> layers.push_back(Layer(outputs, layer_size));
 
     auto layer_data = layers.data();
 
+    // give each layer a reference to the next and previous layer
     for (int i = 0; i < layers.size(); i++) {
         if (i == 0)
             layers.at(i).set_layer_ptr(nullptr, &layer_data[i + 1]);

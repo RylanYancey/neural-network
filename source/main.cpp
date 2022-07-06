@@ -9,7 +9,7 @@ using std::vector;
 
 int main() {
 
-    Network net(2, 3, 3, 1);
+    Network net(2, 3, 3, 2);
 
     std::srand(std::time(NULL));
 
@@ -21,10 +21,10 @@ int main() {
     };
 
     vector<vector<double>> target {
-        { 0 },
-        { 1 },
-        { 1 },
-        { 0 },
+        { 0, 0 },
+        { 1, 1 },
+        { 1, 0 },
+        { 0, 0 },
     };
     
     //vector<double> in2 = { 0.1, 0.9 };

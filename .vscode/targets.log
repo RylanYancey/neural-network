@@ -5,9 +5,8 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
- 
 
-# Make data base, printed on Wed Jul  6 11:26:03 2022
+# Make data base, printed on Wed Jul  6 15:14:27 2022
 
 # Variables
 
@@ -18,7 +17,7 @@ LC_ALL = C
 # environment
 GTK_RC_FILES = /etc/gtk/gtkrc:/home/ryancey/.gtkrc:/home/ryancey/.config/gtkrc
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /run/user/926/vscode-ipc-7afa4128-13a9-4b90-a2a4-ea0ceeb4847a.sock
+VSCODE_IPC_HOOK_EXTHOST = /run/user/926/vscode-ipc-b1bc8834-d0c5-41f9-8098-f5f45b48245e.sock
 # environment
 LMOD_FULL_SETTARG_SUPPORT = no
 # environment
@@ -136,7 +135,7 @@ SHELL = /bin/sh
 # default
 MAKECMDGOALS := all
 # makefile (from 'makefile', line 21)
-objects := bin/layer.o bin/main.o bin/network.o bin/test.o
+objects := bin/layer.o bin/main.o bin/network.o
 # environment
 SHLVL = 2
 # environment
@@ -271,9 +270,9 @@ KDE_FULL_SESSION = true
 # Directories
 
 # . (device 59, inode 214420727): 9 files, no impossibilities.
-# source (device 59, inode 214420735): 6 files, no impossibilities.
+# source (device 59, inode 214420735): 5 files, no impossibilities.
 
-# 15 files, no impossibilities in 2 directories.
+# 14 files, no impossibilities in 2 directories.
 
 # Implicit Rules
 
@@ -285,22 +284,37 @@ bin/%.o: source/%.cpp
 # 1 implicit rules, 0 (0.0%) terminal.
 # Files
 
-bin/main.o: source/main.cpp
-#  Implicit rule search has been done.
-#  Implicit/static pattern stem: 'main'
-#  Last modified 2022-07-06 11:24:39.206393648
-#  File has been updated.
-#  Successfully updated.
-#  recipe to execute (from 'makefile', line 29):
-	$(CC) $(CFLAGS) $?
-	mv *.o bin
+# Not a target:
+bin/main.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 bin/layer.o: source/layer.cpp
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'layer'
-#  Last modified 2022-07-06 11:24:37.655683611
+#  Last modified 2022-07-06 15:14:09.669372859
 #  File has been updated.
-#  Successfully updated.
+#  Needs to be updated (-q is set).
+# automatic
+# @ := bin/layer.o
+# automatic
+# * := layer
+# automatic
+# < := source/layer.cpp
+# automatic
+ 
+# + := source/layer.cpp
+# automatic
+# % := 
+# automatic
+# ^ := source/layer.cpp
+# automatic
+# ? := source/layer.cpp
+# automatic
+# | := 
+# variable set hash-table stats:
+# Load=8/32=25%, Rehash=0, Collisions=3/14=21%
 #  recipe to execute (from 'makefile', line 29):
 	$(CC) $(CFLAGS) $?
 	mv *.o bin
@@ -313,21 +327,16 @@ clean:
 #  recipe to execute (from 'makefile', line 35):
 	rm -rf all $(objects)
 
-bin/network.o: source/network.cpp
-#  Implicit rule search has been done.
-#  Implicit/static pattern stem: 'network'
-#  Last modified 2022-07-06 11:24:40.878155847
-#  File has been updated.
- 
-#  Successfully updated.
-#  recipe to execute (from 'makefile', line 29):
-	$(CC) $(CFLAGS) $?
-	mv *.o bin
+# Not a target:
+bin/network.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 # Not a target:
 source/layer.cpp:
 #  Implicit rule search has been done.
-#  Last modified 2022-07-06 11:11:10.285122
+#  Last modified 2022-07-06 15:14:20.756263
 #  File has been updated.
 #  Successfully updated.
 
@@ -337,40 +346,16 @@ source/layer.cpp:
 #  Modification time never checked.
 #  File has not been updated.
 
-all: bin/layer.o bin/main.o bin/network.o bin/test.o
+all: bin/layer.o bin/main.o bin/network.o
 #  Command line target.
 #  Implicit rule search has not been done.
-#  Implicit/static pattern stem: ''
 #  File does not exist.
 #  File has been updated.
 #  Needs to be updated (-q is set).
-# automatic
-# @ := all
-# automatic
-# * := 
-# automatic
-# < := bin/layer.o
-# automatic
-# + := bin/layer.o bin/main.o bin/network.o bin/test.o
-# automatic
-# % := 
-# automatic
-# ^ := bin/layer.o bin/main.o bin/network.o bin/test.o
-# automatic
-# ? := bin/layer.o bin/main.o bin/network.o bin/test.o
-# automatic
-# | := 
 # variable set hash-table stats:
-# Load=8/32=25%, Rehash=0, Collisions=2/13=15%
+# Load=0/32=0%, Rehash=0, Collisions=0/5=0%
 #  recipe to execute (from 'makefile', line 25):
 	$(CC) -o run $(objects) -larmadillo
-
-# Not a target:
-source/network.cpp:
-#  Implicit rule search has been done.
-#  Last modified 2022-07-06 09:36:15.881958
-#  File has been updated.
-#  Successfully updated.
 
 # Not a target:
 makefile:
@@ -379,55 +364,25 @@ makefile:
 #  File has been updated.
 #  Successfully updated.
 
-bin/test.o: source/test.cpp
-#  Implicit rule search has been done.
-#  Implicit/static pattern stem: 'test'
-#  Last modified 2022-07-06 11:24:40.900203969
-#  File has been updated.
-#  Successfully updated.
-#  recipe to execute (from 'makefile', line 29):
-	$(CC) $(CFLAGS) $?
-	mv *.o bin
-
-# Not a target:
-.SUFFIXES:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-
 .PHONY: clean
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
 
-# Not a target:
-source/main.cpp:
-#  Implicit rule search has been done.
-#  Last modified 2022-07-06 11:23:49.873805
-#  File has been updated.
-#  Successfully updated.
-
-# Not a target:
-source/test.cpp:
-#  Implicit rule search has been done.
-#  Last modified 2022-07-06 11:24:04.615689
-#  File has been updated.
-#  Successfully updated.
-
 # files hash-table stats:
-# Load=14/1024=1%, Rehash=0, Collisions=0/44=0%
+# Load=10/1024=1%, Rehash=0, Collisions=0/29=0%
 # VPATH Search Paths
 
 # No 'vpath' search paths.
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 34 / storage = 318 B / avg = 9 B
-# current buf: size = 8162 B / used = 318 B / count = 34 / avg = 9 B
+# strcache buffers: 1 (0) / strings = 26 / storage = 229 B / avg = 8 B
+# current buf: size = 8162 B / used = 229 B / count = 26 / avg = 8 B
 
-# strcache performance: lookups = 51 / hit rate = 33%
+# strcache performance: lookups = 39 / hit rate = 33%
 # hash-table stats:
-# Load=34/8192=0%, Rehash=0, Collisions=0/51=0%
-# Finished Make data base on Wed Jul  6 11:26:03 2022
+# Load=26/8192=0%, Rehash=0, Collisions=0/39=0%
+# Finished Make data base on Wed Jul  6 15:14:27 2022
 
  

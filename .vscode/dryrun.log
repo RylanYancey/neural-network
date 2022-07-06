@@ -1,5 +1,11 @@
-make --dry-run --keep-going --print-directory
+make --dry-run --always-make --keep-going --print-directory
 make: Entering directory '/home/ryancey/Jam/projects/neural_net'
-g++ -o run bin/layer.o bin/main.o bin/network.o bin/test.o -larmadillo
+g++ -c -I./header -I./source source/layer.cpp
+mv *.o bin
+g++ -c -I./header -I./source source/main.cpp
+mv *.o bin
+g++ -c -I./header -I./source source/network.cpp
+mv *.o bin
+g++ -o run bin/layer.o bin/main.o bin/network.o -larmadillo
 make: Leaving directory '/home/ryancey/Jam/projects/neural_net'
  

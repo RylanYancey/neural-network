@@ -18,11 +18,14 @@ void Layer::forward(Matrix & prev_output) {
     // Z = Input Matrix dot Weight Matrix
     Matrix z = prev_output * weight;
 
-    // Output = Sigmoid Activation of Z
-    output = 1 / ( 1 + arma::exp(-(z)));
+    // Output = Relu Activation of Z
+    // (this used sigmoid before but I updated it to use ReLU)
+    output = arma::max(arma::zeros(z.n_rows, z.n_cols), z);
     
-    // Zprime = Sigmoid Derivative
-    zprime = (output % (1 - output));
+    // Zprime = Relu Derivative
+    zprime = z;
+    zprime.elem(find(zprime >  0)).fill(1);
+    zprime.elem(find(zprime <= 0)).fill(0);
 
     // Continue to the Next Layer, if there is one
     if (next_layer != nullptr) 
@@ -32,6 +35,7 @@ void Layer::forward(Matrix & prev_output) {
 // Backward propogate this layer
 void Layer::backward(Matrix & prev_delta, Matrix & prev_weight) {
 
+    // if this is the output layer
     if (next_layer == nullptr) {
         // Delta of Output = 2 * (output - previous_delta) * Sigmoid Prime
         // or, (del CO / del Ao) * (del Ao / del Zo)
@@ -39,6 +43,7 @@ void Layer::backward(Matrix & prev_delta, Matrix & prev_weight) {
         delta = (output - prev_delta) % zprime;
     }
 
+    // if this is a hidden layer
     else {
         // Delta of Hidden = Previous Delta * Previous Weight * Sigmoid Prime
         // or, (del A / del Z) * (del Z / del A^L-1)
