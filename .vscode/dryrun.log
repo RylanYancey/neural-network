@@ -2,6 +2,7 @@ make --dry-run --always-make --keep-going --print-directory
 make: Entering directory '/home/ryancey/Jam/projects/neural_net'
 g++ -c -I./header -I./source source/layer.cpp
 mv *.o bin
+ 
 g++ -c -I./header -I./source source/main.cpp
 mv *.o bin
 g++ -c -I./header -I./source source/network.cpp

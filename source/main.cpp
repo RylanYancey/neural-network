@@ -9,7 +9,7 @@ using std::vector;
 
 int main() {
 
-    Network net(2, 3, 3, 2);
+    Network net(2, 2, 2, 1);
 
     std::srand(std::time(NULL));
 
@@ -21,10 +21,10 @@ int main() {
     };
 
     vector<vector<double>> target {
-        { 0, 0 },
-        { 1, 1 },
-        { 1, 0 },
-        { 0, 0 },
+        { 0 },
+        { 0 },
+        { 0 },
+        { 1 },
     };
     
     //vector<double> in2 = { 0.1, 0.9 };
@@ -48,7 +48,7 @@ int main() {
 
         cout << input[rand][0] << " " << input[rand][1] << " " << output[0]  << " " << target[rand][0] << endl;
 
-        if (i > 1000)
+        if (i > 5000)
             return 0;
         i++;
     }

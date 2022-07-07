@@ -6,7 +6,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Wed Jul  6 15:14:27 2022
+# Make data base, printed on Thu Jul  7 10:44:55 2022
 
 # Variables
 
@@ -17,7 +17,7 @@ LC_ALL = C
 # environment
 GTK_RC_FILES = /etc/gtk/gtkrc:/home/ryancey/.gtkrc:/home/ryancey/.config/gtkrc
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /run/user/926/vscode-ipc-b1bc8834-d0c5-41f9-8098-f5f45b48245e.sock
+VSCODE_IPC_HOOK_EXTHOST = /run/user/926/vscode-ipc-319cff72-395a-49ae-9d0b-adaf34a709e9.sock
 # environment
 LMOD_FULL_SETTARG_SUPPORT = no
 # environment
@@ -25,7 +25,7 @@ KONSOLE_DBUS_SERVICE = :1.40
 # environment
 VSCODE_CWD = /home/ryancey/Jam/projects/neural_net
 # environment
-WINDOWID = 56623111
+WINDOWID = 52428807
 # environment
 MODULES_CMD = /usr/lib/x86_64-linux-gnu/modulecmd.tcl
 # default
@@ -87,7 +87,7 @@ PAM_KWALLET5_LOGIN = /run/user/926/kwallet5.socket
 # environment
 MFLAGS = -pqrR
 # environment
-SSH_AUTH_SOCK = /tmp/ssh-XXXXXX2c1wBi/agent.1088
+SSH_AUTH_SOCK = /tmp/ssh-XXXXXXBwlwLE/agent.1093
 # default
 .SHELLFLAGS := -c
 # environment
@@ -105,7 +105,7 @@ MAKEFILE_LIST := makefile
 # environment
 VSCODE_VERBOSE_LOGGING = true
 # environment
-VSCODE_PID = 2889
+VSCODE_PID = 2019
 # environment
 LMOD_COLORIZE = yes
 # environment
@@ -113,7 +113,7 @@ XDG_SESSION_TYPE = x11
 # automatic
 ?D = $(patsubst %/,%,$(dir $?))
 # environment
-SESSION_MANAGER = local/lusk:@/tmp/.ICE-unix/1335,unix/lusk:/tmp/.ICE-unix/1335
+SESSION_MANAGER = local/lusk:@/tmp/.ICE-unix/1351,unix/lusk:/tmp/.ICE-unix/1351
 # automatic
 *F = $(notdir $*)
 # environment
@@ -191,7 +191,7 @@ XDG_VTNR = 1
 # makefile
 .DEFAULT_GOAL := all
 # environment
-SYSTEMD_EXEC_PID = 1052
+SYSTEMD_EXEC_PID = 1058
 # environment
 MODULEPATH_ROOT = /usr/modulefiles
 # environment
@@ -205,7 +205,7 @@ KDE_SESSION_UID = 926
 # environment
 KONSOLE_DBUS_SESSION = /Sessions/1
 # environment
-SSH_AGENT_PID = 1219
+SSH_AGENT_PID = 1228
 # environment
 LMOD_arch = x86_64
 # environment
@@ -251,7 +251,7 @@ VSCODE_CLI = 1
 # environment
 ELECTRON_NO_ATTACH_CONSOLE = 1
 # environment
-SHELL_SESSION_ID = 864920234af04c91bda591a5dfba672c
+SHELL_SESSION_ID = 9e36ac778d2f472883b5e5ce1988cbc2
 # environment
 KDE_SESSION_VERSION = 5
 # default
@@ -261,6 +261,7 @@ CC = g++
 # environment
 KDE_FULL_SESSION = true
 # variable set hash-table stats:
+ 
 # Load=125/1024=12%, Rehash=0, Collisions=6/163=4%
 
 # Pattern-specific Variable Values
@@ -293,7 +294,7 @@ bin/main.o:
 bin/layer.o: source/layer.cpp
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'layer'
-#  Last modified 2022-07-06 15:14:09.669372859
+#  Last modified 2022-07-06 15:48:01.325414639
 #  File has been updated.
 #  Needs to be updated (-q is set).
 # automatic
@@ -303,7 +304,6 @@ bin/layer.o: source/layer.cpp
 # automatic
 # < := source/layer.cpp
 # automatic
- 
 # + := source/layer.cpp
 # automatic
 # % := 
@@ -336,7 +336,7 @@ bin/network.o:
 # Not a target:
 source/layer.cpp:
 #  Implicit rule search has been done.
-#  Last modified 2022-07-06 15:14:20.756263
+#  Last modified 2022-07-06 15:48:04.577338
 #  File has been updated.
 #  Successfully updated.
 
@@ -383,6 +383,6 @@ makefile:
 # strcache performance: lookups = 39 / hit rate = 33%
 # hash-table stats:
 # Load=26/8192=0%, Rehash=0, Collisions=0/39=0%
-# Finished Make data base on Wed Jul  6 15:14:27 2022
+# Finished Make data base on Thu Jul  7 10:44:55 2022
 
  

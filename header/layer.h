@@ -29,6 +29,7 @@ private:
     Matrix weight;
     Matrix zprime;
     Matrix delta;
+    Matrix bias;
 
     Layer * prev_layer = nullptr;
     Layer * next_layer = nullptr;
