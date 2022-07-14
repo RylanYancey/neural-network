@@ -1,36 +1,25 @@
 
-// Preprocessor
 #pragma once
 
-// STL
-#include <vector>
-using std::vector;
-
-#include <string>
-using std::string;
-
-// External Libraries
-#include "json/json.h"
-
-// Local Includes
+#include "jsonifier.h"
 #include "layer.h"
-
-#include "neural_net.h"
-using NeuralNet::NetConfig;
-using NeuralNet::Activation;
 
 class Network {
 public:
 
-    Network (NetConfig configuration);
+    Network (NetDescriptor description);
     Network (string from_json);
 
-    vector<float> run   (vector<float> & input);
-    vector<float> train (vector<float> & input, vector<float> & target);
+    vector<double> run (vector<double> & input);
+    void train (vector<vector<double>> & inputs, vector<vector<double>> & targets);
 
-    NetConfig config;
+    void save();
+
+    NetDescriptor desc;
 
 private:
+
+    void set_pointers();
 
     vector<Layer> layers;
 

@@ -1,55 +1,52 @@
 
 #include "layer.h"
 
-Layer::Layer (int layer_size, int prev_layer_size, Activation activation) {
+Layer::Layer (int layer_size, int prev_layer_size, Actv activation, double lr) {
     weight = randu (prev_layer_size, layer_size);
-    bias   = randu (1, layer_size);
-
+    bias =   randu (1, layer_size);
     this -> activation = activation;
+    learning_rate = lr;
 }
 
-void Layer::set_layer_ptr (shared_ptr<Layer> prev, shared_ptr<Layer> next) {
+Layer::Layer (Mat<double> & weights, Mat<double> & biases, Actv activation, double lr) {
+    weight = weights;
+    bias = biases;
+    this -> activation = activation;
+    learning_rate = lr;
+}
+
+void Layer::set_layer_ptr(shared_ptr<Layer> prev, shared_ptr<Layer> next) {
     this -> prev = prev;
     this -> next = next;
 }
 
-void Layer::forward (Mat<float> & prev_output) {
-    Mat<float> z = (prev_output * weight) + bias;
+void Layer::forward (Mat<double> & prev_output) {
+    
+    Mat<double> z = (prev_output * weight) + bias;
 
-    activation (z); // Creates output
-    derivative (z); // Creates zprime
+    activate (z, output, activation, learning_rate);
+    derivative(z, zprime, activation, learning_rate);
 
     if (next != nullptr)
-        next -> forward (output);   
-
+        next -> forward(output);
 }
 
-void Layer::activate (Mat<float> & z) {
+void Layer::backward (Mat<double> & prev_delta, Mat<double> & prev_weight) {
     
-}
+    if (next == nullptr)
+        delta = (2 * (output - prev_delta)) % zprime;
 
-void Layer::derivative (Mat<float> & z) {
-
-}
-
-void Layer::backward (Mat<float> & prev_delta, Mat<float> & prev_weight) {
-
-    if (next == nullptr) 
-        delta = (output - prev_delta) % zprime;
-
-    else 
+    else
         delta = (prev_delta * prev_weight.t()) % zprime;
 
     if (prev != nullptr)
-        prev -> backward(delta, weight);
+        prev -> backward (delta, weight);
 }
 
-void Layer::update (Mat<float> & prev_output, float lr) {
-
+void Layer::update(Mat<double> & prev_output, double lr) {
     weight -= (prev_output.t() * delta) * lr;
     bias -= lr * delta;
 
     if (next != nullptr)
-        next -> update (output, lr);
-
+        next -> update (output, lr);   
 }

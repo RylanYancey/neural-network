@@ -1,46 +1,38 @@
 
-// Preprocessor
 #pragma once
 
-// STL 
-#include<memory>
+#include <memory>
 using std::shared_ptr;
 
-// External Libraries
 #include <armadillo>
 using arma::Mat;
 using arma::randu;
 
-// Local Includes
-#include "neural_net.h"
-using NeuralNet::Activation;
+#include "activation.h"
 
 class Layer {
-
 public:
 
-    Layer (int layer_size, int prev_layer_size, Activation activation);
-    Layer (Mat<float> & weights, Mat<float> & biases);
+    Layer (int layer_size, int prev_layer_size, Actv activatioin, double lr);
+    Layer (Mat<double> & weights, Mat<double> & biases, Actv activation, double lr);
 
-    void forward  (Mat<float> & prev_output);
-    void backward (Mat<float> & prev_delta, Mat<float> & prev_weight);
-    void update   (Mat<float> & prev_out, float learning_rate);
+    void forward  (Mat<double> & prev_output);
+    void backward (Mat<double> & prev_delta, Mat<double> & prev_weight);
+    void update   (Mat<double> & prev_out, double learning_rate);
 
     void set_layer_ptr (shared_ptr<Layer> prev, shared_ptr<Layer> next);
 
-    Mat<float> output;
+    Mat<double> output;
+    Mat<double> weight;
+    Mat<double> zprime;
+    Mat<double> delta;
+    Mat<double> bias;
+
+    Actv activation;
 
 private:
 
-    void activate   (Mat<float> & z);
-    void derivative (Mat<float> & z);
-
-    Mat<float> weight;
-    Mat<float> zprime;
-    Mat<float> delta;
-    Mat<float> bias;
-
-    Activation activation;
+    double learning_rate;
 
     shared_ptr<Layer> prev = nullptr;
     shared_ptr<Layer> next = nullptr;
